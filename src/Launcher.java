@@ -12,7 +12,7 @@ public class Launcher {
         String input;
         while (!kindOf.equals("end")) {
             System.out.println("Fuer Abbruch 'end' Eingeben");
-            if (kindOf.equals("a")) {
+            if (kindOf.equals("")) {
                 System.out.println("Fuer eine Lektion 'lektion' eingeben und fuer mit neuen Vokabeln fuettern 'fuettern' eingeben: ");
             }
             do {

@@ -36,7 +36,6 @@ public class PrintText {
         for (int k=0; k<b; k++) {
             for (int i=k+1; i<b; i++){
                 if (a.get(k).getVocabulary()[0].equals(a.get(i).getVocabulary()[0])) {
-                    System.out.println(a.get(k).getVocabulary()[0]+"     "+a.get(i).getVocabulary()[0]);
                     a.remove(i);
                     b--;
                 }

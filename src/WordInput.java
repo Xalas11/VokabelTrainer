@@ -22,7 +22,7 @@ public class WordInput {
                 i++;
             }
             WordPair temp = new WordPair(lektionNumber, wordPair);
-            newWordList.addFirst(temp);
+            newWordList.addLast(temp);
             System.out.println("Um die Eingabe zu beenden geben sie 'end' ein ansonsten Enter fuer eine weitere Eingabe!");
         } while (!CheckInput.cString().equals("end"));
         PrintText.printWordPairList(newWordList);

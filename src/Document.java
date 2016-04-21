@@ -1,14 +1,16 @@
 import java.awt.image.ImagingOpException;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.LinkedList;
 
 /**
  * Created by robert on 4/18/16.
  */
-public class PrintText {
+public class Document {
+
+    /**
+     * For printing a linkedlist filled with wordpair objects
+     * @param toPrint
+     */
 
     public static void printWordPairList(LinkedList<WordPair> toPrint) {
         StringBuilder sb = new StringBuilder();
@@ -25,16 +27,67 @@ public class PrintText {
     }
 
     /**
+     * For Reading a File into word pairs
+     * @param fileName
+     * @return
+     * @throws IOException
+     */
+    public static LinkedList<WordPair> readFile(String fileName) throws IOException {
+        LinkedList<WordPair> wordList = new LinkedList<>();
+        FileReader getText = new FileReader(fileName);
+        BufferedReader bufferText = new BufferedReader(getText);
+
+
+        String line = bufferText.readLine();
+        if (!line.isEmpty()) {
+            int lessonNumber = Integer.parseInt(line.substring(0, line.indexOf('$'))); // erste Zeile seperat einlesen!
+            int nextWordIndex;
+
+            line = bufferText.readLine();
+
+            do {
+                String[] words = new String[2];
+                int prevWordIndex;
+                int count = 0;
+                nextWordIndex = 0;
+                while (line != null && nextWordIndex < line.length()) {
+                    String wordTemp;
+                    prevWordIndex = line.indexOf('$', nextWordIndex);
+                    wordTemp = line.substring(nextWordIndex, prevWordIndex);
+                    nextWordIndex = prevWordIndex + 1;
+                    words[count] = wordTemp;
+                    if (count < 1) {
+                        count++;
+                    } else {
+                        if (nextWordIndex < line.length()) {
+                            prevWordIndex = line.indexOf('$', nextWordIndex);
+                            count = Integer.parseInt(line.substring(nextWordIndex, prevWordIndex));
+                            nextWordIndex = prevWordIndex + 1;
+                        } else {
+                            count = 0;
+                        }
+                    }
+                }
+                WordPair temp = new WordPair(lessonNumber, words, count);
+                wordList.addLast(temp);
+                line = bufferText.readLine();
+            } while (line != null);
+        }
+        return wordList;
+    }
+
+    /**
      * Die Methode merged exsistierende Lektionen und frisch eingegebene und löscht die duplikate!
+     *
      * @param a
      * @param merge
      * @return
      */
     private LinkedList<WordPair> merge(LinkedList<WordPair> a, LinkedList<WordPair> merge) {
         a.addAll(merge);
-        int b =a.size();
-        for (int k=0; k<b; k++) {
-            for (int i=k+1; i<b; i++){
+        int b = a.size();
+        for (int k = 0; k < b; k++) {
+            for (int i = k + 1; i < b; i++) {
                 if (a.get(k).getVocabulary()[0].equals(a.get(i).getVocabulary()[0])) {
                     a.remove(i);
                     b--;
@@ -44,6 +97,24 @@ public class PrintText {
         return a;
     }
 
+    /**
+     * for deleting a lektion file
+     * @param lektion
+     */
+    public static void deleteDocument(String lektion) {
+        // Schaut ob es einen txt fil gibt mit dieser Lektions nummer
+        File file = new File(lektion);
+        if (file.exists()) {
+            file.delete();
+        }
+    }
+
+    /**
+     * For create a lektion file with number and vocabulary
+     * @param lektionNumber
+     * @param list
+     * @throws IOException
+     */
     public void textToDocument(int lektionNumber, LinkedList<WordPair> list) throws IOException {
         LinkedList<WordPair> tempExisting;
 
@@ -53,7 +124,7 @@ public class PrintText {
             if (!file.exists()) {
             } else {
                 // wenn dieser Exsistiert werden die vorhanden Vokabeln der Funktion eingelesen und verglichen, Duplikate gelöscht
-                tempExisting = ReadText.readFile("vokabeln" + lektionNumber + ".txt");
+                tempExisting = Document.readFile("vokabeln" + lektionNumber + ".txt");
                 list = merge(list, tempExisting);
             }
         } catch (IOException e) {

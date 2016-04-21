@@ -10,10 +10,11 @@ import java.util.Random;
 public class Lesson {
 
     private LinkedList<WordPair> lessonSet;
-    private LinkedList<WordPair> delete = new LinkedList<>();
+    private LinkedList<WordPair> lektion0 = new LinkedList<>();
     private int lektion;
     private int startLang = 0;
     private int destiLang = 1;
+    public int boarderof0 = -2;
 
     /**
      *
@@ -49,30 +50,22 @@ public class Lesson {
         if (a.equals(b)) return true;
         return false;
     }
-
     /**
      *
-     * @param deleteIndex
+     * @param addto0
      */
-    private void wantToDelete(WordPair deleteIndex) {
-        System.out.print("Wenn sie die Vokabel nach dieser Session aus der Lektion löschen wollen geben sie bitte 'ja' ein");
-        if (CheckInput.cString().equals("ja")) {
-            delete.addFirst(deleteIndex);
+    private void wantToAdd(WordPair addto0) {
+        if ((addto0.getTrainingLvl() <= boarderof0 )) {
+            lektion0.addLast(addto0);
         }
     }
-
     /**
      *
      * @throws IOException
      */
-    private void delete() throws IOException {
-        // wenn es sich um die 0te Lektion handelt werden Markierte Vokabeln gelöscht
-        if (0 == lektion) {
-            while (!delete.isEmpty()) {
-                    lessonSet.remove();
-                    delete.removeFirst();
-            }
-        }
+    private void refreshLektions() throws IOException {
+        Document p0 = new Document();
+        p0.textToDocument(0, lektion0);
         // wenn es sich um Vokabeln handelt die 3mal richtig geschrieben worden werden diese nach der Abfrage aus der Lektion gelöscht
             int arrayLenth = lessonSet.size();
             for (int i = 0; i < arrayLenth; i++) {
@@ -82,7 +75,7 @@ public class Lesson {
                     i--;
                 }
             }
-        PrintText pT = new PrintText();
+        Document pT = new Document();
         pT.textToDocument(lektion, lessonSet);
     }
 
@@ -99,18 +92,16 @@ public class Lesson {
                     String temp = CheckInput.cString();
                     if (matcher(lessonSet.get(i).getVocabulary()[destiLang], temp)) { //note muss das übersetzte wort matchen nicht das gleiche
                         System.out.println(temp + " ist Richtig");
-                        if (0 == lessonSet.get(i).getLektionNumber()) {
-                            wantToDelete(lessonSet.get(i));
-                        }
                         lessonSet.get(i).setTrainigLvl(true);
                     } else {
                         System.out.println("Das war leider Falsch: " + lessonSet.get(i).getVocabulary()[destiLang]);
                         lessonSet.get(i).setTrainigLvl(false);
+                        wantToAdd(lessonSet.get(i));
                     }
                 }
             }
         }
-        delete();
+        refreshLektions();
     }
 
     public void random() throws IOException {
@@ -132,16 +123,14 @@ public class Lesson {
             if (matcher(lessonSet.get(preMutate.getFirst()).getVocabulary()[lang], temp)) { //note muss das übersetzte wort matchen nicht das gleiche
                 System.out.println(temp + " ist Richtig");
                 lessonSet.get(preMutate.getFirst()).setTrainigLvl(true);
-                if (0 == lessonSet.get(i).getLektionNumber()) {
-                    wantToDelete(lessonSet.get(i));
-                }
             } else {
                 System.out.println("Das war leider Falsch: " + lessonSet.get(preMutate.getFirst()).getVocabulary()[lang]);
                 lessonSet.get(preMutate.getFirst()).setTrainigLvl(false);
+                wantToAdd(lessonSet.get(i));
             }
             preMutate.removeFirst();
         }
-        delete();
+        refreshLektions();
     }
     public LinkedList<WordPair> getLessonSet() {
         return lessonSet;

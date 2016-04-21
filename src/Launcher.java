@@ -13,7 +13,7 @@ public class Launcher {
         while (!kindOf.equals("end")) {
             System.out.println("Fuer Abbruch 'end' Eingeben");
             if (kindOf.equals("")) {
-                System.out.println("Fuer eine Lektion 'lektion' eingeben und fuer mit neuen Vokabeln fuettern 'fuettern' eingeben: ");
+                System.out.println("Fuer eine Lektion 'lektion' eingeben und fuer mit neuen Vokabeln fuettern 'fuettern' eingeben vielleicht wollen sie auch das Programm beenden und die Lektion 0 loeschen 'loeschen': ");
             }
             do {
                 input = CheckInput.cString();
@@ -24,6 +24,9 @@ public class Launcher {
                     break;
                 }
                 if (input.equals("lektion")) {
+                    break;
+                }
+                if (input.equals("loeschen")) {
                     break;
                 }
                 System.out.println("Falsche Eingabe");
@@ -37,6 +40,9 @@ public class Launcher {
                 case "lektion":
                     artAbfrage();
                     return;
+                case "loeschen":
+                    Document.deleteDocument("vokabeln0.txt");
+                    return;
             }
         }
     }
@@ -44,7 +50,7 @@ public class Launcher {
     public void fuettern() throws IOException {
         WordInput wp = new WordInput();
         wp.makeWordList();
-        PrintText pT = new PrintText();
+        Document pT = new Document();
         pT.textToDocument(wp.getLektionNumber(), wp.getNewWordList());
         startProgram("");
     }

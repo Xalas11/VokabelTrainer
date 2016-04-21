@@ -1,7 +1,3 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.LinkedList;
 
 /**
@@ -25,7 +21,7 @@ public class WordInput {
             newWordList.addLast(temp);
             System.out.println("Um die Eingabe zu beenden geben sie 'end' ein ansonsten Enter fuer eine weitere Eingabe!");
         } while (!CheckInput.cString().equals("end"));
-        PrintText.printWordPairList(newWordList);
+        Document.printWordPairList(newWordList);
     }
     public void resetList() {
         newWordList = null;

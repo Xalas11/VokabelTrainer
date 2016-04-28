@@ -1,11 +1,15 @@
 import java.util.LinkedList;
 
 /**
- * Created by robert on 4/15/16.
+ * Die Klasse erstellt aus eingabe Wordpair Objecte fuegt diese in eine LinkedListe ein
  */
 public class WordInput {
     private LinkedList<WordPair> newWordList = new LinkedList<>();
     private int lektionNumber;
+
+    /**
+     * Die Klasse erstellt aus eingabe Wordpair Objecte fuegt diese in eine LinkedListe ein
+     */
     public void makeWordList() {
         System.out.println("Bitte geben sie die Lektionsnummer der Vokabeln ein: ");
         lektionNumber = CheckInput.cInt();

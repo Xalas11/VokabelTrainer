@@ -1,38 +1,5 @@
 0$
-Auto$car$0$
-Freunde$friends$0$
-Brod$bread$0$
-Fahrzeug$vehicle$0$
-Stau$traffic jam$0$
-Reise$trip$0$
-Eisenbahn$railway, railroad$0$
-Bahnsteig$platform$0$
-Fahrkartenschalter$ticket office$0$
-Kontrolleur$ticket-collector$0$
-Zollamt$custom-house$0$
-Personenzug$passenger train$0$
-Schnellzug$express train$0$
-Lokomotive$engine$0$
-Schlafwagen$sleeping-car$0$
-Notbremse$emergency brake$0$
-Schiene$rail$0$
-Gleis$track$0$
-Triebwagen$rail-car$0$
-Weiche$BE points, AE switch$0$
-Autobahn$BE motorway, AE freeway$0$
-Cabrio$convertible$0$
-Lastwagen$lorry, truck$0$
-Taxi$taxi, cab$0$
-Motorrad$motor-cycle$0$
-Roller$scooter$0$
-Anh?nger$trailer$0$
-Armaturenbrett$dashboard$0$
-Bremse$brake$0$
-Benzin$BE petrol, AE gasoline, gas$0$
-Gaspedal$accelerator$0$
-Fahrgestell$chassis$0$
-Karosserie$body$0$
-Scheinwerfer$headlight$0$
-Schalthebel$gear lever$0$
-Tachometer$speedometer$0$
-Z?ndung$ignition$0$
+Doener$kebab$-2$
+Ficker$fucker$-2$
+Cool$cool$-2$
+Nazi$nazi$-2$

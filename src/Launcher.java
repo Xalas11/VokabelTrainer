@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 /**
- * Created by robert on 4/18/16.
+ * Klasse die den Programm ablauf steuert(main)
  */
 public class Launcher {
 
@@ -87,7 +87,7 @@ public class Launcher {
                 return;
             }
         } while (true);
-        l = new Lesson(ReadText.readFile("vokabeln" + checked + ".txt"), checked);
+        l = new Lesson(Document.readFile("vokabeln" + checked + ".txt"), checked);
         switch (a) {
             case 1:
                 l.firstToLast();

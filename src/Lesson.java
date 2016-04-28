@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Random;
 
 /**
- * Created by robert on 4/15/16.
+ * Diese Klasse verwaltet die Vokabel abfrage
  */
 
 public class Lesson {
@@ -12,9 +12,9 @@ public class Lesson {
     private LinkedList<WordPair> lessonSet;
     private LinkedList<WordPair> lektion0 = new LinkedList<>();
     private int lektion;
-    private int startLang = 0;
-    private int destiLang = 1;
-    public int boarderof0 = -2;
+    static public int startLang = 0;
+    static public int destiLang = 1;
+    static public int boarderof0 = -2;
 
     /**
      *
@@ -27,7 +27,7 @@ public class Lesson {
     }
 
     /**
-     *
+     * Waehle zufaellige Sprache
      * @return
      */
     public int rndLanguage() {
@@ -41,7 +41,7 @@ public class Lesson {
     }
 
     /**
-     *
+     * Schaut ob String a mit String b uebereinstimmt
      * @param a
      * @param b
      * @return
@@ -51,7 +51,7 @@ public class Lesson {
         return false;
     }
     /**
-     *
+     * fuegt string lektion 1 hinzu
      * @param addto0
      */
     private void wantToAdd(WordPair addto0) {
@@ -60,7 +60,7 @@ public class Lesson {
         }
     }
     /**
-     *
+     *  Erneuert die Lektionen loescht tranierte Vokabeln und leitet Lektion 0 Vokabeln weiter
      * @throws IOException
      */
     private void refreshLektions() throws IOException {
@@ -80,7 +80,7 @@ public class Lesson {
     }
 
     /**
-     *
+     *  Vokabeln werden in Eingabereihenfolge abgefragt
      * @throws IOException
      */
     public void firstToLast() throws IOException {
@@ -104,6 +104,10 @@ public class Lesson {
         refreshLektions();
     }
 
+    /**
+     * Vokabeln werden durcheinander Abgefraget, sprachen und reihenfolge
+     * @throws IOException
+     */
     public void random() throws IOException {
         // geht die liste random durch, die abgefrage sprache ist ebenfalls random
         LinkedList<Integer> preMutate = new LinkedList<>();
@@ -131,9 +135,6 @@ public class Lesson {
             preMutate.removeFirst();
         }
         refreshLektions();
-    }
-    public LinkedList<WordPair> getLessonSet() {
-        return lessonSet;
     }
 }
 

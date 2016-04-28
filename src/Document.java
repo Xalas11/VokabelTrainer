@@ -1,14 +1,13 @@
-import java.awt.image.ImagingOpException;
 import java.io.*;
 import java.util.LinkedList;
 
 /**
- * Created by robert on 4/18/16.
+ * Diese Klasse enthaelt statische Methoden fuer die Ausgabe und das Einlesen von Daten
  */
 public class Document {
 
     /**
-     * For printing a linkedlist filled with wordpair objects
+     * Gibt eine linkedliste mit WordPait Objecten aus
      * @param toPrint
      */
 
@@ -27,7 +26,7 @@ public class Document {
     }
 
     /**
-     * For Reading a File into word pairs
+     * Liest einen txt ein und erstellt daraus WordPair Objecte und fuegt diese in eine Linkedliste ein
      * @param fileName
      * @return
      * @throws IOException
@@ -98,7 +97,7 @@ public class Document {
     }
 
     /**
-     * for deleting a lektion file
+     * Für das Loeschen einer Lektion
      * @param lektion
      */
     public static void deleteDocument(String lektion) {
@@ -110,7 +109,7 @@ public class Document {
     }
 
     /**
-     * For create a lektion file with number and vocabulary
+     * Erstellt einen Lektionsdatei mit hilfe einer WordPair Liste
      * @param lektionNumber
      * @param list
      * @throws IOException

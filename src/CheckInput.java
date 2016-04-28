@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 /**
- * Kleine Klasse um nicht jedesmal den input von scannern zu handeln
+ * diese Klasse beherbergt statische Methoden um die Eingabe zu Pruefen
  */
 public class CheckInput {
     /**
-     *
+     * Gibt einen validen Integer zurzueck
      * @return
      */
     public static int cInt() {
@@ -22,7 +22,7 @@ public class CheckInput {
     }
 
     /**
-     *
+     * Gibt einen String zurueck
      * @return
      */
     public static String cString() {

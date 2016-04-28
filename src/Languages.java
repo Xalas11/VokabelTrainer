@@ -1,5 +1,5 @@
 /**
- * Created by robert on 4/15/16.
+ * Enum fuer die VokabelSprachen
  */
 public enum Languages {
     Deutsch, Englisch

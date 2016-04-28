@@ -82,7 +82,7 @@ public class Document {
      * @param merge
      * @return
      */
-    private LinkedList<WordPair> merge(LinkedList<WordPair> a, LinkedList<WordPair> merge) {
+    private static LinkedList<WordPair> merge(LinkedList<WordPair> a, LinkedList<WordPair> merge) {
         a.addAll(merge);
         int b = a.size();
         for (int k = 0; k < b; k++) {
@@ -122,7 +122,7 @@ public class Document {
      * @param list
      * @throws IOException
      */
-    public void textToDocument(int lektionNumber, LinkedList<WordPair> list) throws IOException {
+    public static void textToDocument(int lektionNumber, LinkedList<WordPair> list) throws IOException {
         LinkedList<WordPair> tempExisting;
 
         try {

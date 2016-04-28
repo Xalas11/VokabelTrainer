@@ -50,8 +50,7 @@ public class Launcher {
     public void fuettern() throws IOException {
         WordInput wp = new WordInput();
         wp.makeWordList();
-        Document pT = new Document();
-        pT.textToDocument(wp.getLektionNumber(), wp.getNewWordList());
+        Document.textToDocument(wp.getLektionNumber(), wp.getNewWordList());
         startProgram("");
     }
 

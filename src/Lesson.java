@@ -46,7 +46,7 @@ public class Lesson {
      * @param b
      * @return
      */
-    public boolean matcher(String a, String b) {
+    private boolean matcher(String a, String b) {
         if (a.equals(b)) return true;
         return false;
     }
@@ -54,7 +54,7 @@ public class Lesson {
      * fuegt string lektion 1 hinzu
      * @param addto0
      */
-    private void wantToAdd(WordPair addto0) {
+    private void addToLek0(WordPair addto0) {
         if ((addto0.getTrainingLvl() <= boarderof0 )) {
             lektion0.addLast(addto0);
         }
@@ -64,11 +64,9 @@ public class Lesson {
      * @throws IOException
      */
     private void refreshLektions() throws IOException {
-        Document p0 = new Document();
-        p0.textToDocument(0, lektion0);
+        Document.textToDocument(0, lektion0);
         // wenn es sich um Vokabeln handelt die 3mal richtig geschrieben worden werden diese nach der Abfrage aus der Lektion gelöscht
-        Document pT = new Document();
-        pT.textToDocument(lektion, lessonSet);
+        Document.textToDocument(lektion, lessonSet);
     }
 
     /**
@@ -88,7 +86,7 @@ public class Lesson {
                     } else {
                         System.out.println("Das war leider Falsch: " + lessonSet.get(i).getVocabulary()[destiLang]);
                         lessonSet.get(i).setTrainigLvl(false);
-                        wantToAdd(lessonSet.get(i));
+                        addToLek0(lessonSet.get(i));
                     }
                 }
             }
@@ -122,7 +120,7 @@ public class Lesson {
             } else {
                 System.out.println("Das war leider Falsch: " + lessonSet.get(preMutate.getFirst()).getVocabulary()[lang]);
                 lessonSet.get(preMutate.getFirst()).setTrainigLvl(false);
-                wantToAdd(lessonSet.get(i));
+                addToLek0(lessonSet.get(i));
             }
             preMutate.removeFirst();
         }

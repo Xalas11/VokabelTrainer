@@ -67,14 +67,6 @@ public class Lesson {
         Document p0 = new Document();
         p0.textToDocument(0, lektion0);
         // wenn es sich um Vokabeln handelt die 3mal richtig geschrieben worden werden diese nach der Abfrage aus der Lektion gelöscht
-            int arrayLenth = lessonSet.size();
-            for (int i = 0; i < arrayLenth; i++) {
-                if (lessonSet.get(i).getTrainingLvl() >= 3) {
-                    lessonSet.remove(i);
-                    arrayLenth--;
-                    i--;
-                }
-            }
         Document pT = new Document();
         pT.textToDocument(lektion, lessonSet);
     }

@@ -93,6 +93,14 @@ public class Document {
                 }
             }
         }
+        int arrayLenth = a.size();
+        for (int i = 0; i < arrayLenth; i++) {
+            if (a.get(i).getTrainingLvl() >= 3) {
+                a.remove(i);
+                arrayLenth--;
+                i--;
+            }
+        }
         return a;
     }
 
@@ -130,17 +138,17 @@ public class Document {
             e.printStackTrace();
         }
 
-        if (list.isEmpty()) return;
+        //if (list.isEmpty()) return;
         StringBuilder sb = new StringBuilder();
         sb.append(lektionNumber + "$\n"); // Lektions Kopf, nummer
         /*
             Loopt durch die Liste und schreibt sie in den Stringbuilder
          */
         while (!list.isEmpty()) {
-            for (int k = 0; k < list.getFirst().getVocabulary().length; k++) {
-                sb.append(list.getFirst().getVocabulary()[k] + "$");
-            }
-            sb.append(list.getFirst().getTrainingLvl() + "$");
+                for (int k = 0; k < list.getFirst().getVocabulary().length; k++) {
+                    sb.append(list.getFirst().getVocabulary()[k] + "$");
+                }
+                sb.append(list.getFirst().getTrainingLvl() + "$");
             list.removeFirst();
             sb.append("\n");
         }
@@ -148,7 +156,6 @@ public class Document {
         String toDocument = sb.toString();
 
         // Wenn noch kein txt file für die jeweilige Lektion besteht wird dieser erstellt und mit der Linkedlist gefüllt
-        if (!toDocument.equals(lektionNumber + "$\n")) {
             try {
 
                 File file = new File("vokabeln" + lektionNumber + ".txt");
@@ -167,5 +174,4 @@ public class Document {
                 e.printStackTrace();
             }
         }
-    }
 }

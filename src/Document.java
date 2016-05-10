@@ -180,7 +180,7 @@ public class Document {
         System.out.print("Folgende Lektionen stehen zur Auswahl: ");
         for (int i = 0; i < listOfFiles.length; i++) {
             if (listOfFiles[i].isFile()) {
-                System.out.print(" "+listOfFiles[i].getName().substring(0,listOfFiles[i].getName().length()-4));
+                System.out.print(" "+listOfFiles[i].getName().endsWith(".txt"));
             }
         }
         System.out.println();

@@ -127,11 +127,11 @@ public class Document {
 
         try {
             // Schaut ob es einen txt fil gibt mit dieser Lektions nummer
-            File file = new File("vokabeln" + lektionNumber + ".txt");
+            File file = new File(lektionNumber + ".txt");
             if (!file.exists()) {
             } else {
                 // wenn dieser Exsistiert werden die vorhanden Vokabeln der Funktion eingelesen und verglichen, Duplikate gelöscht
-                tempExisting = Document.readFile("vokabeln" + lektionNumber + ".txt");
+                tempExisting = Document.readFile(lektionNumber + ".txt");
                 list = merge(list, tempExisting);
             }
         } catch (IOException e) {
@@ -158,7 +158,7 @@ public class Document {
         // Wenn noch kein txt file für die jeweilige Lektion besteht wird dieser erstellt und mit der Linkedlist gefüllt
             try {
 
-                File file = new File("vokabeln" + lektionNumber + ".txt");
+                File file = new File(lektionNumber + ".txt");
 
                 // if file doesnt exists, then create it
                 if (!file.exists()) {
@@ -174,4 +174,15 @@ public class Document {
                 e.printStackTrace();
             }
         }
+    public static void getAllFiles() {
+        File folder = new File("./");
+        File[] listOfFiles = folder.listFiles();
+        System.out.print("Folgende Lektionen stehen zur Auswahl: ");
+        for (int i = 0; i < listOfFiles.length; i++) {
+            if (listOfFiles[i].isFile()) {
+                System.out.print(" "+listOfFiles[i].getName().substring(0,listOfFiles[i].getName().length()-4));
+            }
+        }
+        System.out.println();
+    }
 }

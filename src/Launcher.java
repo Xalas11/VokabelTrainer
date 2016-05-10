@@ -41,7 +41,7 @@ public class Launcher {
                     artAbfrage();
                     return;
                 case "loeschen":
-                    Document.deleteDocument("vokabeln0.txt");
+                    Document.deleteDocument("0.txt");
                     return;
             }
         }
@@ -56,12 +56,13 @@ public class Launcher {
 
     public void artAbfrage() throws IOException {
         Lesson l;
+        Document.getAllFiles();
         System.out.println("Bitte geben sie die Lektions Nummer ein..");
         LinkedList<WordPair> check = new LinkedList<>();
         int checked;
         while (true) {
             checked = CheckInput.cInt();
-            File file = new File("vokabeln" + checked + ".txt");
+            File file = new File(checked + ".txt");
             if (file.exists()) {
                 break;
             } else {
@@ -86,7 +87,7 @@ public class Launcher {
                 return;
             }
         } while (true);
-        l = new Lesson(Document.readFile("vokabeln" + checked + ".txt"), checked);
+        l = new Lesson(Document.readFile(checked + ".txt"), checked);
         switch (a) {
             case 1:
                 l.firstToLast();

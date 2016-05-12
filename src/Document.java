@@ -7,8 +7,8 @@ import java.util.LinkedList;
 public class Document {
 
     /**
-     * Gibt eine linkedliste mit WordPait Objecten aus
-     * @param toPrint
+     *
+     * @param toPrint Gibt eine linkedliste mit WordPait Objecten aus
      */
 
     public static void printWordPairList(LinkedList<WordPair> toPrint) {
@@ -27,9 +27,9 @@ public class Document {
 
     /**
      * Liest einen txt ein und erstellt daraus WordPair Objecte und fuegt diese in eine Linkedliste ein
-     * @param fileName
-     * @return wordList
-     * @throws IOException
+     * @param  fileName name der Vokabeldatei
+     * @return Likedlist aus Vokabeln
+     * @throws IOException fehler dateiname
      */
     public static LinkedList<WordPair> readFile(String fileName) throws IOException {
         LinkedList<WordPair> wordList = new LinkedList<>();
@@ -78,8 +78,8 @@ public class Document {
     /**
      * Die Methode merged exsistierende Lektionen und frisch eingegebene und loescht die duplikate!
      *
-     * @param a
-     * @param merge
+     * @param a Vokabelliste a
+     * @param merge Vokanbelliste b
      * @return Zusammengefuegte Vokabelliste
      */
     private static LinkedList<WordPair> merge(LinkedList<WordPair> a, LinkedList<WordPair> merge) {
@@ -106,7 +106,7 @@ public class Document {
 
     /**
      * Fuer das Loeschen einer Lektion
-     * @param lektion
+     * @param lektion Name der Lektion
      */
     public static void deleteDocument(String lektion) {
         // Schaut ob es einen txt fil gibt mit dieser Lektions nummer
@@ -118,9 +118,9 @@ public class Document {
 
     /**
      * Erstellt einen Lektionsdatei mit hilfe einer WordPair Liste
-     * @param lektionNumber
-     * @param list
-     * @throws IOException
+     * @param lektionNumber Lektionnummer
+     * @param list Vokabelliste
+     * @throws IOException fehler Dateiname
      */
     public static void textToDocument(int lektionNumber, LinkedList<WordPair> list) throws IOException {
         LinkedList<WordPair> tempExisting;

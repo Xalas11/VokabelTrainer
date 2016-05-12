@@ -18,8 +18,8 @@ public class Lesson {
 
     /**
      *
-     * @param lessonSet
-     * @param lektion
+     * @param lessonSet Vokabelliste
+     * @param lektion integer Lektions Nummer
      */
     public Lesson(LinkedList<WordPair> lessonSet, int lektion) {
         this.lessonSet = lessonSet;
@@ -42,9 +42,9 @@ public class Lesson {
 
     /**
      * Schaut ob String a mit String b uebereinstimmt
-     * @param a
-     * @param b
-     * @return
+     * @param a String a
+     * @param b String b
+     * @return boolean Strings passen oder nicht
      */
     private boolean matcher(String a, String b) {
         if (a.equals(b)) return true;
@@ -52,7 +52,7 @@ public class Lesson {
     }
     /**
      * fuegt string lektion 1 hinzu
-     * @param addto0
+     * @param addto0 Vokabel Wordpair
      */
     private void addToLek0(WordPair addto0) {
         if ((addto0.getTrainingLvl() <= boarderof0 )) {
@@ -61,7 +61,7 @@ public class Lesson {
     }
     /**
      *  Erneuert die Lektionen loescht tranierte Vokabeln und leitet Lektion 0 Vokabeln weiter
-     * @throws IOException
+     * @throws IOException fehler dateiname
      */
     private void refreshLektions() throws IOException {
         Document.textToDocument(0, lektion0);
@@ -71,7 +71,7 @@ public class Lesson {
 
     /**
      *  Vokabeln werden in Eingabereihenfolge abgefragt
-     * @throws IOException
+     * @throws IOException fehler dateiname
      */
     public void firstToLast() throws IOException {
         // geht die liste von vorn nach hinten durch
@@ -96,7 +96,7 @@ public class Lesson {
 
     /**
      * Vokabeln werden durcheinander Abgefraget, sprachen und reihenfolge
-     * @throws IOException
+     * @throws IOException fehler dateiname
      */
     public void random() throws IOException {
         // geht die liste random durch, die abgefrage sprache ist ebenfalls random

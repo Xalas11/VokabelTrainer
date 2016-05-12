@@ -28,7 +28,7 @@ public class Document {
     /**
      * Liest einen txt ein und erstellt daraus WordPair Objecte und fuegt diese in eine Linkedliste ein
      * @param fileName
-     * @return
+     * @return wordList
      * @throws IOException
      */
     public static LinkedList<WordPair> readFile(String fileName) throws IOException {
@@ -80,7 +80,7 @@ public class Document {
      *
      * @param a
      * @param merge
-     * @return
+     * @return Zusammengefuegte Vokabelliste
      */
     private static LinkedList<WordPair> merge(LinkedList<WordPair> a, LinkedList<WordPair> merge) {
         a.addAll(merge);
@@ -174,6 +174,10 @@ public class Document {
                 e.printStackTrace();
             }
         }
+
+    /**
+     * Listet alle txt files des Verzeichnises auf
+     */
     public static void getAllFiles() {
         File folder = new File("./");
         File[] listOfFiles = folder.listFiles();

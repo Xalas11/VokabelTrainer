@@ -28,7 +28,7 @@ public class Lesson {
 
     /**
      * Waehle zufaellige Sprache
-     * @return
+     * @return zufaelliger int der ausgewaehlten sprachen
      */
     public int rndLanguage() {
         Random rnd = new Random();

@@ -31,6 +31,7 @@ public class WordInput {
         newWordList = null;
         newWordList = new LinkedList<>();
     }
+
     public LinkedList<WordPair> getNewWordList() {
         return newWordList;
     }

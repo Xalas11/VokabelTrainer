@@ -8,8 +8,8 @@ public class WordPair {
 
     /**
      *
-     * @param lektionNumber
-     * @param vocabulary
+     * @param lektionNumber lektions Nummer
+     * @param vocabulary String Array mit Vokabular
      */
     public WordPair(int lektionNumber, String[] vocabulary) {
         this.vocabulary = vocabulary;
@@ -18,9 +18,9 @@ public class WordPair {
 
     /**
      *
-     * @param lektionNumber
-     * @param vocabulary
-     * @param trainingLvl
+     * @param lektionNumber lektions Nummer
+     * @param vocabulary String Array mit Vokabular
+     * @param trainingLvl Integer mit TraningsLevel
      */
     public WordPair(int lektionNumber, String[] vocabulary, int trainingLvl) {
         this.vocabulary = vocabulary;
@@ -29,32 +29,32 @@ public class WordPair {
     }
 
     /**
-     * gibt die Lektionsnummer der Vokabel zurueck
-     * @return
+     *
+     * @return lessenNumber gibt die Lektionsnummer der Vokabel zurueck
      */
     public int getLektionNumber() {
         return lessonNumber;
     }
 
     /**
-     * gibt das Vokabular des Objekts zurueck
-     * @return
+     *
+     * @return gibt das Vokabular des Objekts zurueck
      */
     public String[] getVocabulary() {
         return vocabulary;
     }
 
     /**
-     * gibt das Traningslvl des Objekts
-     * @return
+     *
+     * @return gibt das Traningslvl des Objekts
      */
     public int getTrainingLvl() {
         return trainingLvl;
     }
 
     /**
-     * veraendert das Traningslvl
-     * @param win
+     *
+     * @param win veraendert das Traningslvl
      */
     public void setTrainigLvl(boolean win) {
         if (win) {
@@ -65,8 +65,8 @@ public class WordPair {
     }
 
     /**
-     * setzt die Lektionsnummer
-     * @param lektionNumber
+     *
+     * @param lektionNumber setzt die Lektionsnummer
      */
     public void setLektionNumber(int lektionNumber) {
         this.lessonNumber = lektionNumber;

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class CheckInput {
     /**
      * Gibt einen validen Integer zurzueck
-     * @return
+     * @return einen gueltigen Integer
      */
     public static int cInt() {
         Scanner sc = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class CheckInput {
 
     /**
      * Gibt einen String zurueck
-     * @return
+     * @return Gibt einen String zurueck
      */
     public static String cString() {
         Scanner sc = new Scanner(System.in);

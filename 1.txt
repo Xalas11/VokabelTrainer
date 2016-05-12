@@ -1,0 +1,78 @@
+1$
+100 Meter Lauf$run the 100 metres$0$
+Abfahrtslauf$Downhill Skiing$0$
+Angeln$Fishing$0$
+Ausdauerlauf$Endourance course$0$
+Bergsteigen$Mountaineering$0$
+Billiard$Billiards$0$
+Bob$Bobsleigh$0$
+Bogenschießen$Archery$0$
+Bowlen$Bowling$0$
+Boxen$Boxing$0$
+Dart$Darts$0$
+Diskus$Discus$0$
+Drachenfliegen$Hang-gliding$0$
+Eishockey$Ice Hockey$0$
+Eiskunstlauf$Figure Skating$0$
+Eisschnellauf$Speed Skating$0$
+Fallschirmspringen$Parachuting$0$
+Fechten$Fencing$0$
+Formel 1$Formula 1$0$
+Fußball$Soccer, Football$0$
+Gewichtheben$Weight Lifting$0$
+Gotcha$Paintball$0$
+Hammerwurf$Hammer Throwing$0$
+Hindernis-, Hürdenlauf$Hurdle Race$0$
+Hochsprung$High jump$0$
+Jagen$Hunting$0$
+Joggen$Jogging$0$
+Kajak$Kayak$0$
+Kanu$Canoe$0$
+Kanuslalom$Canoe Slalom$0$
+Klettern$Climbing$0$
+Kugelstoßen$Shot put$0$
+Kurzstreckenlauf$Sprint$0$
+Langstreckenlauf$long distance run$0$
+Leichtathletik$Athletics$0$
+Moderner Fünfkampf$Modern Pentathlon$0$
+Motorsport$Motorsports$0$
+Netzball$Netball$0$
+Nordische Kombination$Nordic Combined$0$
+Orientierungslauf$Orienteering$0$
+Pferderennen$Horse Racing$0$
+Radsport$Cycling$0$
+Reiten$Riding, Equestrian$0$
+Rennen$Running$0$
+Rennrodeln$Luge$0$
+Rhythmische Sportgymnastik$Rhythmic Gymnastics$0$
+Riesenslalom$Giant Slalom$0$
+Ringen$Wrestling$0$
+Rudern$Rowing$0$
+Schach$Chess$0$
+Schießen$Shooting$0$
+Schwimmen$Swimming, Aquatics$0$
+Segelfliegen$Gliding$0$
+Segeln$Sailing$0$
+Seilspringen$Rope Skipping$0$
+Skateboarden$Skateboarding$0$
+Skaten$Skating$0$
+Skilanglauf$Cross Country Skiing$0$
+Skilaufen$Skiing$0$
+Skispringen$Ski Jumping$0$
+Snowboarden$Snowboarding$0$
+Spazierengehen$Walking$0$
+Speerwerfen$Javelin$0$
+Stabhochsprung$Pole Vault$0$
+Staffellauf$Relay Race$0$
+Surfen$Surfing$0$
+Synchronschwimmen$Synchronized Swimming$0$
+Tanzen$Dancing$0$
+Tauziehen$tug-of-war$0$
+Tischtennis$Table Tennis$0$
+Turnen$Gymnastics$0$
+Wandern$Hiking$0$
+Wasserball$Water Polo$0$
+Wasserski$Waterski$0$
+Wasserspringen$High Diving$0$
+Weitsprung$Long jump$0$
+Windsurfen$Windsurfing$0$

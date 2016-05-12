@@ -76,7 +76,7 @@ public class Document {
     }
 
     /**
-     * Die Methode merged exsistierende Lektionen und frisch eingegebene und löscht die duplikate!
+     * Die Methode merged exsistierende Lektionen und frisch eingegebene und loescht die duplikate!
      *
      * @param a
      * @param merge
@@ -105,7 +105,7 @@ public class Document {
     }
 
     /**
-     * Für das Loeschen einer Lektion
+     * Fuer das Loeschen einer Lektion
      * @param lektion
      */
     public static void deleteDocument(String lektion) {
@@ -130,7 +130,7 @@ public class Document {
             File file = new File(lektionNumber + ".txt");
             if (!file.exists()) {
             } else {
-                // wenn dieser Exsistiert werden die vorhanden Vokabeln der Funktion eingelesen und verglichen, Duplikate gelöscht
+                // wenn dieser Exsistiert werden die vorhanden Vokabeln der Funktion eingelesen und verglichen, Duplikate geloescht
                 tempExisting = Document.readFile(lektionNumber + ".txt");
                 list = merge(list, tempExisting);
             }
@@ -155,7 +155,7 @@ public class Document {
 
         String toDocument = sb.toString();
 
-        // Wenn noch kein txt file für die jeweilige Lektion besteht wird dieser erstellt und mit der Linkedlist gefüllt
+        // Wenn noch kein txt file fuer die jeweilige Lektion besteht wird dieser erstellt und mit der Linkedlist gefuellt
             try {
 
                 File file = new File(lektionNumber + ".txt");

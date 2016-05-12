@@ -6,6 +6,10 @@ import java.util.LinkedList;
  * Klasse die den Programm ablauf steuert(main)
  */
 public class Launcher {
+    public static void main(String[] args) throws IOException {
+        Launcher launch = new Launcher();
+        launch.startProgram("");
+    }
 
     public void startProgram(String a) throws IOException {
         String kindOf = a;
@@ -70,7 +74,7 @@ public class Launcher {
             }
         }
         System.out.println("Fuer Abbruch 'end' Eingeben");
-        System.out.println("Fuer von vorn nach hinten 'normal', Für zufaellige Reihenfolge und sprache 'random' Eingeben:");
+        System.out.println("Fuer von vorn nach hinten 'normal', Fuer zufaellige Reihenfolge und sprache 'random' Eingeben:");
         String input;
         int a;
         do {
@@ -96,7 +100,7 @@ public class Launcher {
                 l.random();
                 break;
         }
-        System.out.println("Sie sind mit dieser Lektion Fertig wollen sie noch eine Lektion? 'ja'  für noch eine Lektion oder irgendwas für Hauptmenu");
+        System.out.println("Sie sind mit dieser Lektion Fertig wollen sie noch eine Lektion? 'ja'  fuer noch eine Lektion oder irgendwas fuer Hauptmenu");
         if(CheckInput.cString().equals("ja")){
             artAbfrage();
         } else {

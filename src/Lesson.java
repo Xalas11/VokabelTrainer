@@ -65,7 +65,7 @@ public class Lesson {
      */
     private void refreshLektions() throws IOException {
         Document.textToDocument(0, lektion0);
-        // wenn es sich um Vokabeln handelt die 3mal richtig geschrieben worden werden diese nach der Abfrage aus der Lektion gelöscht
+        // wenn es sich um Vokabeln handelt die 3mal richtig geschrieben worden werden diese nach der Abfrage aus der Lektion geloescht
         Document.textToDocument(lektion, lessonSet);
     }
 
@@ -80,7 +80,7 @@ public class Lesson {
                 if (lektion == lessonSet.get(i).getLektionNumber()) {
                     System.out.println("Vokabel: " + lessonSet.get(i).getVocabulary()[startLang] + " Sie sind Dran: ");
                     String temp = CheckInput.cString();
-                    if (matcher(lessonSet.get(i).getVocabulary()[destiLang], temp)) { //note muss das übersetzte wort matchen nicht das gleiche
+                    if (matcher(lessonSet.get(i).getVocabulary()[destiLang], temp)) { //note muss das uebersetzte wort matchen nicht das gleiche
                         System.out.println(temp + " ist Richtig");
                         lessonSet.get(i).setTrainigLvl(true);
                     } else {
@@ -114,7 +114,7 @@ public class Lesson {
             } else {
                 lang = startLang;
             }
-            if (matcher(lessonSet.get(preMutate.getFirst()).getVocabulary()[lang], temp)) { //note muss das übersetzte wort matchen nicht das gleiche
+            if (matcher(lessonSet.get(preMutate.getFirst()).getVocabulary()[lang], temp)) { //note muss das uebersetzte wort matchen nicht das gleiche
                 System.out.println(temp + " ist Richtig");
                 lessonSet.get(preMutate.getFirst()).setTrainigLvl(true);
             } else {
